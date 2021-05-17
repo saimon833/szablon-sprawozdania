@@ -65,6 +65,23 @@
 	\setlength{\headheight}{51pt}
 	%\setlength{\textheight}{678pt}
 }
+\newcommand\blankpage{ 
+	\null
+	\thispagestyle{empty}
+	\newpage}
+
+% Longlisting dla listingów dłuższych niż strona
+\newenvironment{longlisting}{\captionsetup{type=listing}}{}
+
+%przykladowe uzycie
+%\begin{longlisting}
+%    \caption{Przykładowy długi listing}
+%    \label{Lis:PrzykładowyDługiListing}
+%    \begin{minted}[breaklines = true, frame=lines, framesep=2mm, baselinestretch=1,
+%    tabsize=2, fontsize=\footnotesize, linenos]{c}
+%   \end{minted}
+%\end{lognlisting}
+ 
 \renewcommand{\maketitle}{
 \begin{titlepage}\centering
 \includegraphics[scale=0.7]{logoweii}
