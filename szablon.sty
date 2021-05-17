@@ -1,0 +1,101 @@
+\usepackage{polski}
+%\usepackage{nopageno}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{minted}
+\usepackage{placeins}
+\usepackage{float}
+\usepackage{tocloft}
+\graphicspath{ {images/} }
+\usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=2.5cm,includefoot=false,includehead=false,footskip=1.16cm 
+]{geometry} % definicja strony i marginesów
+\usepackage{fancyhdr} 
+\usepackage{titlesec}
+%\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\newcommand\authors[1]{\renewcommand\@authors{#1}}
+\newcommand\@authors{\@latex@error{No \noexpand\authors given}\@ehc}
+\newcommand\cdate[1]{\renewcommand\@cdate{#1}}
+\newcommand\@cdate{\@latex@error{No \noexpand\cdate given}\@ehc}
+\newcommand\fieldofstudy[1]{\renewcommand\@fieldofstudy{#1}}
+\newcommand\@fieldofstudy{\@latex@error{No \noexpand\fieldofstudy given}\@ehc}
+\newcommand\group[1]{\renewcommand\@group{#1}}
+\newcommand\@group{\@latex@error{No \noexpand\group given}\@ehc}
+\newcommand\department[1]{\renewcommand\@department{#1}}
+\newcommand\@department{\@latex@error{No \noexpand\department given}\@ehc}
+\newcommand\subject[1]{\renewcommand\@subject{#1}}
+\newcommand\@subject{\@latex@error{No \noexpand\subject given}\@ehc}
+\newcommand\classnumber[1]{\renewcommand\@classnumber{#1}}
+\newcommand\@classnumber{\@latex@error{No \noexpand\classnumber given}\@ehc}
+\newcommand\topic[1]{\renewcommand\@topic{#1}}
+\newcommand\@topic{\@latex@error{No \noexpand\topic given}\@ehc}
+\newcommand\classtype[1]{\renewcommand\@classtype{#1}}
+\newcommand\@classtype{\@latex@error{No \noexpand\classtype given}\@ehc}
+ 
+\def\setcase#1 {\expandafter\def\csname rodzajTitleNo:#1\endcsname}
+\def\rodzajPracyPLTitle#1{\expandafter\ifx\csname rodzajTitleNo:#1\endcsname\relax \PLdefault 
+                \else \csname rodzajTitleNo:#1\endcsname\fi}
+
+\newcommand{\rodzajPracyNo}{\@department}
+
+\def\PLdefault {wpisz-rodzaj-pracyPL}    
+\setcase zsz {Zakład Systemów Złożonych}
+\setcase kia {Katedra Informatyki i Automatyki}
+\setcase pei {Katedra Elektrotechniki i Podstaw Informatyki}
+\setcase ekst {Katedra Systemów Elektronicznych i Telekomunikacyjnych}
+
+\renewcommand{\cftsecaftersnum}{.}
+\renewcommand{\cftsubsecaftersnum}{.}
+\renewcommand{\cftsubsubsecaftersnum}{.}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\titlelabel{\thetitle.\quad}
+
+\newcommand{\addheaderandfotter}
+{
+	\newgeometry{left=2cm,right=2cm,top=2cm,bottom=2.7cm,includefoot,includehead=false,footskip=1.16cm}
+	\pagestyle{fancy}
+	\fancyhf{}
+	\lhead{\rodzajPracyPLTitle{\rodzajPracyNo}}
+	\rhead{\includegraphics[width=1cm]{logo_\@department}}
+	\cfoot{\thepage}
+	\setlength{\headheight}{51pt}
+	%\setlength{\textheight}{678pt}
+}
+\renewcommand{\maketitle}{
+\begin{titlepage}\centering
+\includegraphics[scale=0.7]{logoweii}
+%scale: pei=0.7 zsz=0.105 kia=0.58 ekst=1.1
+\includegraphics[width=3.1cm]{logo_\@department}\vspace*{3cm}\\
+\begin{Large}
+    \textbf{\@classtype ~z przedmiotu\\
+    \@subject\\
+    Numer \@classtype: \@classnumber\\
+    Temat: }\@topic\\
+\end{Large}
+\vspace*{8cm}
+\raggedright
+\begin{large}
+    \textbf{Nazwa kierunku: }\@fieldofstudy\\
+    \textbf{Imię i nazwisko: }\@authors\\
+    \textbf{Data wykonania: }\@cdate \\
+    \textbf{Nr grupy laboratoryjnej: }\@group\\
+\end{large}
+\vspace*{\fill}
+\centering Rzeszów \the\year
+\end{titlepage}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{listing}[h!]
+%\inputminted{octave}{Octave/main.m}
+%\caption{Kod funkcji main}
+%\end{listing}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\clearpage
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=0.4]{fig1.png}\\
+%\caption{Wykres wygenerowany przez program}
+%\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
