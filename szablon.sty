@@ -1,3 +1,5 @@
+
+
 \usepackage{polski}
 %\usepackage{nopageno}
 \usepackage[utf8]{inputenc}
@@ -7,6 +9,7 @@
 \usepackage{amsmath}
 \usepackage{minted}
 \usepackage{placeins}
+\usepackage{subcaption} 
 \usepackage{float}
 \usepackage{tocloft}
 \usepackage{gensymb}
@@ -42,7 +45,9 @@
 \def\rodzajPracyPLTitle#1{\expandafter\ifx\csname rodzajTitleNo:#1\endcsname\relax \PLdefault 
                 \else \csname rodzajTitleNo:#1\endcsname\fi}
 
+
 \newcommand{\rodzajPracyNo}{\@department}
+
 
 \def\PLdefault {wpisz-rodzaj-pracyPL}    
 \setcase zsz {Zakład Systemów Złożonych}
@@ -50,11 +55,13 @@
 \setcase pei {Katedra Elektrotechniki i Podstaw Informatyki}
 \setcase ekst {Katedra Systemów Elektronicznych i Telekomunikacyjnych}
 
+
 \renewcommand{\cftsecaftersnum}{.}
 \renewcommand{\cftsubsecaftersnum}{.}
 \renewcommand{\cftsubsubsecaftersnum}{.}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \titlelabel{\thetitle.\quad}
+
 
 \newcommand{\addheaderandfotter}
 {
@@ -72,8 +79,10 @@
 	\thispagestyle{empty}
 	\newpage}
 
+
 % Longlisting dla listingów dłuższych niż strona
 \newenvironment{longlisting}{\captionsetup{type=listing}}{}
+
 
 %przykladowe uzycie
 %\begin{longlisting}
@@ -81,9 +90,10 @@
 %    \label{Lis:PrzykładowyDługiListing}
 %    \begin{minted}[breaklines = true, frame=lines, framesep=2mm, baselinestretch=1,
 %    tabsize=2, fontsize=\footnotesize, linenos]{c}
-%   \end{minted}
-%\end{lognlisting}
- 
+ %   \end{minted}
+ %\end{lognlisting}
+
+
 \renewcommand{\maketitle}{
 \begin{titlepage}\centering
 \includegraphics[scale=0.7]{logoweii}
@@ -107,16 +117,9 @@
 \centering Rzeszów \the\year
 \end{titlepage}
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{listing}[h!]
-%\inputminted{octave}{Octave/main.m}
-%\caption{Kod funkcji main}
-%\end{listing}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\clearpage
-%\begin{figure}[h!]
-%\centering
-%\includegraphics[scale=0.4]{fig1.png}\\
-%\caption{Wykres wygenerowany przez program}
-%\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{listing}[H]
+%\begin{minted}[breaklines = true, frame=lines, framesep=2mm, baselinestretch=1,
+%    tabsize=2, fontsize=\normalsize, linenos]{matlab}
+%\end{minted}
+%\caption{Kod programu main}
+%\end{listing}p, li { white-space: pre-wrap; }
