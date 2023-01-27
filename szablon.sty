@@ -1,11 +1,11 @@
-\usepackage{polski}
+\usepackage[polish]{babel}
 %\usepackage{nopageno}
 \usepackage[utf8]{inputenc}
-\usepackage{amssymb}
+%\usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{enumitem}
-\usepackage{amsmath}
-\usepackage{minted}
+%\usepackage{amsmath}
+%\usepackage{minted}
 \usepackage{placeins}
 \usepackage{subcaption} 
 \usepackage{float}
@@ -19,6 +19,11 @@
 \usepackage{titlesec}
 \usepackage{mathptmx}
 \usepackage[T1]{fontenc}
+\usepackage{minted}
+\usepackage{inconsolata}
+\usepackage{textcomp}
+\AtBeginEnvironment{minted}{\dontdofcolorbox}
+\def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
 %\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
 \newcommand\authors[1]{\renewcommand\@authors{#1}}
 \newcommand\@authors{\@latex@error{No \noexpand\authors given}\@ehc}
